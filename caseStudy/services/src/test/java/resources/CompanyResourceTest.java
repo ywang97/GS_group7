@@ -1,3 +1,5 @@
+import pojo.Company;
+
 /**
  * Copyright 2019 Goldman Sachs.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,5 +27,13 @@ public class CompanyResourceTest {
     // Think about both positive and negative test cases:
     // What happens if no inputs are passed?
     // What happens if the input is null?
+
+@Test
+public void CompanyInfoTest(){
+    String example1Symbol = "ADBE";
+    String actualSymbol = target().path("services/ADBE").request().get(Company.class).getSymbol();
+    assertEquals(actualSymbol, example1Symbol);
+}
+
 
 }

@@ -22,10 +22,29 @@ public class CompanyResource {
 
     @GET
     @Path("{company}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Company getCompanyInfo(@PathParam("company") String TKR) {
 
-        List<Company> mycompany = FileHelper.readCompanies("companyInfo.json") ;
+        List<Company> mycompanies = FileHelper.readCompanies("companyInfo.json");
 
+        //CALL INPUT VALIDATOR
+        //String CheckedInput = InputValidator(TKR);
+        String CheckedInput = TKR;
 
+        if (TKR.symbol.equals("ERROR99")) {
+            return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
+        }
+
+        for (Company acompany : mycompanies) {
+            if (acompany.symbol.equals(CheckedInput)) {
+                return acompany;
+            }
+        }
+        return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
+    }
+}
+
+/*
             "symbol":"AKAM",
             "name":"Akamai Technologies Inc.",
             "headquartersCity":"Cambridge",
@@ -33,7 +52,7 @@ public class CompanyResource {
             "numberOfEmployees":6200,
             "sector":"Technology",
             "industry":"IT Services & Consulting"
-
+*/
 
 
 
@@ -60,4 +79,4 @@ public class CompanyResource {
     // Your service should return data for a given stock ticker
 
 
-}
+
