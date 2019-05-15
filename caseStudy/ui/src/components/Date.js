@@ -80,7 +80,7 @@
                  />
              </div>
              <div className="form-group">
-               <button className="btn btn-success">Add Date</button>
+               <button className="btn btn-success">Search by Date</button>
                <p><strong>{this.props.text}</strong></p>
                <div className="date-input">
                </div>
@@ -91,7 +91,6 @@
        );
      }
    }
-
 /*import React from 'react';
 //import DatePicker from 'react-datepicker'; UNCOMMENT this line if you are using the DatePicker component
 import moment from 'moment';
