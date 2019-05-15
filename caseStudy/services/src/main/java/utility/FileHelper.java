@@ -2,8 +2,7 @@ package utility;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Event;
-import model.Team;
+import pojo.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,60 +16,15 @@ import java.util.List;
 
 public class FileHelper {
 
-    public static final SimpleDateFormat DATEFORMAT = new SimpleDateFormat("yyyy-MM-dd");
+    public static final SimpleDateFormat DATEFORMAT = new SimpleDateFormat("MM-dd-yyyy");
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static Event readCompanyData(String fileName) throws IOException {
+    public static List<Company> readCompanies(String fileName) throws IOException {
 
-        InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
+        InputStream inputStream = new FileInputStream((".../resources/data" + File.separatorChar + fileName));
 //        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
-        return mapper.readValue(inputStream, new TypeReference<Event>() {
+        return mapper.readValue(inputStream, new TypeReference<List<Company>>() {
         });
     }
 
-    public static List<Event> readAllEvents(String fileName) throws IOException {
-
-        InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
-//        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
-        return mapper.readValue(inputStream, new TypeReference<List<Event>>() {
-        });
-    }
-
-    public static List<Team> readTeamsFromFile(String fileName) throws IOException {
-
-        InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
-//        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
-        return mapper.readValue(inputStream, new TypeReference<List<Team>>() {
-        });
-    }
-
-    public static Team readTeamFromFile(String fileName) throws IOException {
-
-        InputStream inputStream = new FileInputStream(("data" + File.separatorChar + fileName));
-//        InputStream resourceAsStream = FileHelper.class.getClassLoader().getResourceAsStream(fileName);
-        return mapper.readValue(inputStream, new TypeReference<Team>() {
-        });
-    }
-
-    public static void writeTeamsToFile(String fileName, List<Team> teams) throws IOException {
-
-        mapper.writerWithDefaultPrettyPrinter()
-                .writeValue(new File("data", fileName), teams);
-    }
-
-    public static void writeTeamToFile(String fileName, Team team) throws IOException {
-        mapper.writerWithDefaultPrettyPrinter()
-                .writeValue(new File("data", fileName), team);
-    }
-
-
-    public static void writeEventToFile(String fileName, Event event) throws IOException {
-        mapper.writerWithDefaultPrettyPrinter()
-                .writeValue(new File("data", fileName), event);
-    }
-
-    public static void writeEventsToFile(String fileName, List<Event> scheduledEvents) throws IOException {
-        mapper.writerWithDefaultPrettyPrinter()
-                .writeValue(new File("data", fileName), scheduledEvents);
-    }
 }
