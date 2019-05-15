@@ -15,16 +15,28 @@
  */
 
 package utility;
-
+import java.util.regex;
 /**
  * Utility class to validate inputs
  */
 public class InputValidator {
 
     // TODO - write a method that will validate your JSON input files
+    // ignore for now :)
 
     // TODO - write a method that will validate the inputs to the Company Resource
+    public String validateTicker(String ticker){
+        if (ticker.length()!=4){
+            return "ERROR99";
+        }
+        if (ticker.matches("^[a-zA-Z]*$")){
+            return ticker.toUpperCase();
+        }
+        return "ERROR99";
+
+    }
 
     // TODO - write a method that will validate the inputs to the Stock Resource
+
 
 }

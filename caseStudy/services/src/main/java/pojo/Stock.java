@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2019 Goldman Sachs.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,11 @@
  * under the License.
  */
 
-package pojo;
+package java.pojo;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.pojo.Company;
+import java.util.Date;
 
 /**
  * This class will define a company's end-of-day stock price
@@ -27,7 +30,7 @@ public class Stock {
     // Define the attributes of a stock price based on the
     // provided data in resources/data
 
-    private DateFormat date;
+    private Date date;
     private Company company;
     private float dailyClosePrice;
 
@@ -35,7 +38,7 @@ public class Stock {
     // TODO - add getter and setter methods for your attributes
 
 
-    public DateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -48,8 +51,9 @@ public class Stock {
     }
 
 
-    public void setDate(String dat){
-        this.date = date;
+    public void setDate(String dat) throws ParseException {
+        SimpleDateFormat formatted_date = new SimpleDateFormat("MM/dd/yyyy");
+        this.date = formatted_date.parse(dat);
     }
 
     public void setCompany (Company comp){

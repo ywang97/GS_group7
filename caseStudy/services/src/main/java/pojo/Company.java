@@ -68,9 +68,8 @@ public class Company {
         if (!(company.getHeadquartersStateOrCountry().equals(getHeadquartersStateOrCountry()))) return false;
         if (!(company.getSector().equals(getSector()))) return false;
         if (!(company.getIndustry().equals(getIndustry()))) return false;
-        if (company.getNumberOfEmployees()!=getNumberOfEmployees()) return false;
+        return company.getNumberOfEmployees() == getNumberOfEmployees();
 
-        return true;
     }
 
 

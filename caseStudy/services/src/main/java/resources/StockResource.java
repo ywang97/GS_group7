@@ -17,6 +17,30 @@
 package resources;
 
 // TODO - add your @Path here
+
+@GET
+@Path("{company}/{startDate}/{endDate}")
+@Produces(MediaType.APPLICATION_JSON)
+public Company getCompanyInfo(@PathParam("company") String TKR) {
+
+        List<Company> mycompanies = FileHelper.readCompanies("companyInfo.json");
+
+        //CALL INPUT VALIDATOR
+        //String CheckedInput = InputValidator(TKR);
+        String CheckedInput = TKR;
+
+        if (TKR.symbol.equals("ERROR99")) {
+        return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
+        }
+
+        for (Company acompany : mycompanies) {
+        if (acompany.symbol.equals(CheckedInput)) {
+        return acompany;
+        }
+        }
+        return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
+        }
+        }
 public class StockResource {
 
     // TODO - Add a @GET resource to get stock data
