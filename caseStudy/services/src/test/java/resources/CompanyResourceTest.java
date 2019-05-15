@@ -37,19 +37,19 @@ package resources;
 /**
  * Write your tests for the Company Resource here
  */
-public class CompanyResourceTest {
+public static class CompanyResourceTest {
 
     // TODO - write a test for each method in the CompanyResource class
     // Think about both positive and negative test cases:
     // What happens if no inputs are passed?
     // What happens if the input is null?
 
-@Test
-public void CompanyInfoTest(){
-    String example1Symbol = "ADBE";
-    String actualSymbol = target().path("services/ADBE").request().get(Company.class).getSymbol();
-    assertEquals(actualSymbol, example1Symbol);
-}
+    @Test
+    public static void CompanyInfoTest(){
+        String example1Symbol = "ADBE";
+        String actualSymbol = target().path("services/ADBE").request().get(Company.class).getSymbol();
+        assertEquals(actualSymbol, example1Symbol);
+    }
 
 
 }
