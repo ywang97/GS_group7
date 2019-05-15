@@ -57,7 +57,7 @@ import static org.junit.Assert.*;
 /**
  * Write your tests for the Company Resource here
  */
-public class CompanyResourceTest {
+public class CompanyResourceTest extends JerseyTest{
 
     // TODO - write a test for each method in the CompanyResource class
     // Think about both positive and negative test cases:
