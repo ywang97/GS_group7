@@ -25,8 +25,6 @@ import './style/App.css';
  import Date from './components/Date';
  import Charts from './components/Charts';
 
-
-
 class App extends React.Component{
     constructor(props) {
         super(props);
