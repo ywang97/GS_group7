@@ -71,5 +71,4 @@ public class CompanyResourceTest {
         assertEquals(actualSymbol, example1Symbol);
     }
 
-
 }
