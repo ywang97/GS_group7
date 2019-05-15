@@ -47,7 +47,7 @@
  */
 
 import React from 'react';
-//import {Typeahead} from 'react-bootstrap-typeahead'; UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
+import {Typeahead} from 'react-bootstrap-typeahead'; // UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
 
 /* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that 
  * provides auto-complete suggestions as you type. This would require adding a search handler 
@@ -71,6 +71,15 @@ class StockTicker extends React.Component {
      * If you are having difficulty with this, you may hard code the options array from the company data provided for the
      * services.
      */
+
+     fetch('path', {
+     	method: 'get'
+     }).then(function(response) {
+
+     }).catch(function(err) {
+     	// Error
+     });
+
     constructor(props) {
         super(props);
         this.state = {
@@ -103,7 +112,8 @@ class StockTicker extends React.Component {
              * to handle errors). If you successfully retrieve this information, you can set the state objects
              * and render it.
              */
-            this.setState({showinfo: true});
+            this.setState({showcompanyinfo: true});
+            this.setState({showcompanyinfo: true});
 
             //this.props.onChange(..);  Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
@@ -111,7 +121,7 @@ class StockTicker extends React.Component {
 
         }
         else {
-            this.setState({showinfo: false});
+            this.setState({showcompanyinfo: false});
             this.props.onChange(undefined);
         }
     }
@@ -161,3 +171,12 @@ class StockTicker extends React.Component {
 }
 
 //Don't forget to export your component!
+export default StockTicker;
+
+//var data = require('../../file.json'); // forward slashes will depend on the file location
+
+//for(var i = 0; i < data.length; i++) {
+//    var obj = data[i];
+//
+//    console.log("Name: " + obj.first_name + ", " + obj.last_name);
+//}

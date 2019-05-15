@@ -21,6 +21,10 @@ import './style/App.css';
  * TODO:
  * Import your components
  */
+ import StockTicker from './components/StockTicker';
+ import Date from './components/Date';
+ import Charts from './components/Charts';
+
 
 
 class App extends React.Component{
