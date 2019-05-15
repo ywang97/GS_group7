@@ -29,6 +29,9 @@ public class InputValidator {
         if (ticker.length()!=4){
             return "ERROR99";
         }
+        if (ticker == null){
+            return "ERROR99";
+        }
         if (ticker.matches("^[a-zA-Z]*$")){
             return ticker.toUpperCase();
         }

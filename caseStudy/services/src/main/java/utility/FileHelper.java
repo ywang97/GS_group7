@@ -1,8 +1,8 @@
-package utility;
+package java.utility;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import pojo.*;
+import java.pojo.*;
 
 import java.io.File;
 import java.io.FileInputStream;

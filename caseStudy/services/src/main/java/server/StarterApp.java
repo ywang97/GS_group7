@@ -49,7 +49,7 @@ public class StarterApp extends Application<Configuration> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StarterApp.class);
 
-    private static Example11SolutionResource restService = new Example11SolutionResource();
+    private static CompanyResource restService = new CompanyResource();
 
     public StarterApp() {
     }

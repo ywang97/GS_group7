@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package java.pojo;
+package pojo;
 
 /**
  * This class will define a company and its attributes
