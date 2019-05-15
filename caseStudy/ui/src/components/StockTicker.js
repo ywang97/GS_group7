@@ -72,13 +72,20 @@ class StockTicker extends React.Component {
      * services.
      */
 
-     fetch('path', {
-     	method: 'get'
-     }).then(function(response) {
+//     fetch('path', {
+//     	method: 'get'
+//     }).then(function(response) {
+//
+//     }).catch(function(err) {
+//     	// Error
+//     });
 
-     }).catch(function(err) {
-     	// Error
-     });
+     options : [
+       'GS', 'AAPL', 'FB', 'ATVI', 'ADBE', 'AKAM', 'ALXN', 'GOOG', 'AMZN', 'AAL', 'AMGN', 'ADI', 'AMAT', 'ADSK', 'ADP',
+       'BIDU', 'BIIB', 'BMRN', 'AVGO', 'CA', 'CELG', 'CERN', 'CHTR', 'CHKP', 'CTAS', 'CSCO', 'CTXS', 'CTSH', 'CMCSA',
+       'COST', 'CSX', 'CTRP', 'XRAY', 'DISCA', 'DISCK', 'DISH', 'DLTR', 'EBAY', 'EA', 'EXPE', 'ESRX', 'FAST', 'FISV',
+       'GILD', 'HAS', 'HSIC', 'HQLX', 'IDXX', 'ILMN', 'INCY'
+     ]
 
     constructor(props) {
         super(props);
@@ -112,10 +119,25 @@ class StockTicker extends React.Component {
              * to handle errors). If you successfully retrieve this information, you can set the state objects
              * and render it.
              */
-            this.setState({showcompanyinfo: true});
-            this.setState({showcompanyinfo: true});
 
-            //this.props.onChange(..);  Call this.props.onChange with the selected symbol to propagate it
+             // URL: http://localhost:8000/service_path/some_param
+
+        componentDidMount() {
+            //this.setState({ isLoading: true });
+
+            fetch(event[0])
+                .then(response => response.json())
+                .then(data => this.setState({company: {symbol: data.symbol,
+                                                        name: data.name,
+                                                        city: data.city,
+                                                        state: data.state,
+                                                        sector: data.sector,
+                                                        industry: data.industry
+                                                        }}));
+        this.setState({showcompanyinfo: true});
+        }
+
+            this.props.onChange(this.state.company.symbol);  //Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
             // ultimately  used to fetch the data for the LineChart component.
 
@@ -163,6 +185,19 @@ class StockTicker extends React.Component {
                      *  be maintained as a state object.
                      *  http://reactpatterns.com/#conditional-rendering
                      */
+                     <div>
+                     {
+                       showcompanyinfo ? ( // if showcompanyinfo is true
+                         <span>{props.company.name}</span>
+                         <span>{props.company.city}</span>
+                         <span>{props.company.state}</span>
+                         <span>{props.company.sector}</span>
+                         <span>{props.company.industry}</span>
+                       ) : (
+                         <span>Rendered when otherwise</span>
+                       );
+                     }
+                     </div>
                 }
             </div>
         );
