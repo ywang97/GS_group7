@@ -21,8 +21,18 @@ package resources;
 public class CompanyResource {
 
     @GET
-    @Path("company")
+    @Path("{company}")
 
+        List<Company> mycompany = FileHelper.readCompanies("companyInfo.json") ;
+
+
+            "symbol":"AKAM",
+            "name":"Akamai Technologies Inc.",
+            "headquartersCity":"Cambridge",
+            "headquartersStateOrCountry":"MA",
+            "numberOfEmployees":6200,
+            "sector":"Technology",
+            "industry":"IT Services & Consulting"
 
 
 
