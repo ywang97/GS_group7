@@ -35,15 +35,23 @@ public class Company {
     private String industry;
 
     // TODO - add getter and setter methods for your attributes
-
+    //get
     public String getSymbol(){return this.symbol; }
     public String getName() {return this.name; }
     public String getHeadquartersCity() {return this.headquartersCity; }
     public String getHeadquartersStateOrCountry() {return this.headquartersStateOrCountry; }
+    public int getNumberOfEmployees() {return this.numberOfEmployees; }
     public String getSector() {return this.sector; }
     public String getIndustry() {return this.industry; }
-    public int getNumberOfEmployees() {return this.numberOfEmployees; }
 
+    //set
+    public void setSymbol(String symbol) {this.symbol = symbol;}
+    public void setName(String name) {this.name = name;}
+    public void setHeadquartersCity(String headquartersCity) {this.headquartersCity = headquartersCity;}
+    public void setHeadquartersStateOrCountry(String headquartersStateOrCountry) {this.headquartersStateOrCountry = headquartersStateOrCountry;}
+    public void setNumberOfEmployees(int num) {this.numberOfEmployees = num;}
+    public void setSector(String sector) {this.sector = sector;}
+    public void setIndustry(String industry) {this.industry = industry;}
 
     // comparator
 
