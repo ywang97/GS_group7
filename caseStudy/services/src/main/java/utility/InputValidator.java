@@ -27,12 +27,12 @@ public class InputValidator {
     // TODO - write a method that will validate the inputs to the Company Resource
     public String validateTicker(String ticker){
         if (ticker.length()!=4){
-            return "ERROR";
+            return "ERROR99";
         }
         if (ticker.matches("^[a-zA-Z]*$")){
             return ticker.toUpperCase();
         }
-        return "ERROR";
+        return "ERROR99";
 
     }
 
