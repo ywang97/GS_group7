@@ -27,7 +27,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.List;
-import pojo.Company;
 
 // TODO - add your @Path here
 @Path("services")
@@ -48,12 +47,12 @@ public class CompanyResource {
             //return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
         }
 
-        for (Company acompany : mycompanies) {
-            if (acompany.getSymbol().equals(CheckedInput)) {
-                return acompany;
+        for (Company aCompany : mycompanies) {
+            if (aCompany.getSymbol().equals(CheckedInput)) {
+                return aCompany;
             }
         }
-        //return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
+        throw new IOException("Company not found");
     }
 }
 

@@ -1,14 +1,11 @@
 package server;
 
-import test.*;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pojo.*;
-import utility.*;
 import resources.CompanyResource;
 
 /**
@@ -49,7 +46,7 @@ public class StarterApp extends Application<Configuration> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StarterApp.class);
 
-    private static Example11SolutionResource restService = new Example11SolutionResource();
+    private static CompanyResource restService = new CompanyResource();
 
     public StarterApp() {
     }

@@ -1,3 +1,5 @@
+
+package resources;
 import pojo.Company;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -51,12 +53,11 @@ import static org.junit.Assert.*;
  * under the License.
  */
 
-package resources;
 
 /**
  * Write your tests for the Company Resource here
  */
-public static class CompanyResourceTest {
+public class CompanyResourceTest {
 
     // TODO - write a test for each method in the CompanyResource class
     // Think about both positive and negative test cases:
