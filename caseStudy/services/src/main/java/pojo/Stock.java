@@ -17,7 +17,6 @@
 package pojo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.pojo.Company;
 import java.util.Date;
 
 /**
