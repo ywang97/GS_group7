@@ -16,32 +16,27 @@
 
 package resources;
 
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import static utility.FileHelper.DATEFORMAT;
+
 // TODO - add your @Path here
-
-@GET
-@Path("{company}/{startDate}/{endDate}")
-@Produces(MediaType.APPLICATION_JSON)
-public Company getCompanyInfo(@PathParam("company") String TKR) {
-
-        List<Company> mycompanies = FileHelper.readCompanies("companyInfo.json");
-
-        //CALL INPUT VALIDATOR
-        //String CheckedInput = InputValidator(TKR);
-        String CheckedInput = TKR;
-
-        if (TKR.symbol.equals("ERROR99")) {
-        return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
-        }
-
-        for (Company acompany : mycompanies) {
-        if (acompany.symbol.equals(CheckedInput)) {
-        return acompany;
-        }
-        }
-        return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
-        }
-        }
+@Path("Case_Study/services")
 public class StockResource {
+    @GET
+    @Path("{stock}")
+    public
 
     // TODO - Add a @GET resource to get stock data
     // Your service should return data based on 3 inputs

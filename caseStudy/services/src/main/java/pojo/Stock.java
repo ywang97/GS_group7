@@ -14,7 +14,7 @@
  * under the License.
  */
 
-package java.pojo;
+package pojo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.pojo.Company;
