@@ -26,5 +26,44 @@ public class Company {
     // Define the attributes of a Company based on the
     // provided data in resources/data
 
+    private String symbol;
+    private String name;
+    private String headquartersCity;
+    private String headquartersStateOrCountry;
+    private int numberOfEmployees;
+    private String sector;
+    private String industry;
+
     // TODO - add getter and setter methods for your attributes
+
+    public String getSymbol(){return this.symbol; }
+    public String getName() {return this.name; }
+    public String getHeadquartersCity() {return this.headquartersCity; }
+    public String getHeadquartersStateOrCountry() {return this.headquartersStateOrCountry; }
+    public String getSector() {return this.sector; }
+    public String getIndustry() {return this.industry; }
+    public int getNumberOfEmployees() {return this.numberOfEmployees; }
+
+
+    // comparator
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) return true;
+        if (!(obj instanceof Company)) return false;
+
+        Company company = (Company) obj;
+
+        if (!(company.getSymbol().equals(getSymbol()))) return false;
+        if (!(company.getName().equals(getName()))) return false;
+        if (!(company.getHeadquartersCity().equals(getHeadquartersCity()))) return false;
+        if (!(company.getHeadquartersStateOrCountry().equals(getHeadquartersStateOrCountry()))) return false;
+        if (!(company.getSector().equals(getSector()))) return false;
+        if (!(company.getIndustry().equals(getIndustry()))) return false;
+        if (company.getNumberOfEmployees()!=getNumberOfEmployees()) return false;
+
+        return true;
+    }
+
+
 }
