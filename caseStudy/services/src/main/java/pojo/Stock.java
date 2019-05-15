@@ -15,6 +15,7 @@
  */
 
 package pojo;
+import java.text.SimpleDateFormat;
 
 /**
  * This class will define a company's end-of-day stock price
@@ -26,5 +27,36 @@ public class Stock {
     // Define the attributes of a stock price based on the
     // provided data in resources/data
 
+    private DateFormat date;
+    private Company company;
+    private float dailyClosePrice;
+
+
     // TODO - add getter and setter methods for your attributes
+
+
+    public DateFormat getDate() {
+        return date;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public float getDailyClosePrice() {
+        return dailyClosePrice;
+    }
+
+
+    public void setDate(String dat){
+        this.date = date;
+    }
+
+    public void setCompany (Company comp){
+        this.company = comp;
+    }
+
+    public void setDailyClosePrice (float price){
+        this.dailyClosePrice = price;
+    }
 }

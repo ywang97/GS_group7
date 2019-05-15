@@ -22,4 +22,5 @@ public class CompanyResource {
     // TODO - Add a @GET resource to get company data
     // Your service should return data for a given stock ticker
 
+
 }
