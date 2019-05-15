@@ -17,7 +17,34 @@
 package resources;
 
 // TODO - add your @Path here
+@Path("services")
 public class CompanyResource {
+
+    @GET
+    @Path("company")
+
+
+
+
+
+    /*
+    @GET
+    @Path("{country}/wins")
+    public int getWins(@PathParam("country") String country) throws IOException {
+
+        List<Event> events = FileHelper.readAllEvents("events.json");
+
+        int numWins = 0;
+        for (Event event: events) {
+            if (event.getWinningCountry().name().equalsIgnoreCase(country)) {
+                ++numWins;
+            }
+
+        }
+        return numWins;
+    }
+}
+*/
 
     // TODO - Add a @GET resource to get company data
     // Your service should return data for a given stock ticker
