@@ -16,6 +16,19 @@
 
 package resources;
 
+import pojo.Company;
+import utility.FileHelper;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.util.List;
+import pojo.Company;
+
 // TODO - add your @Path here
 @Path("services")
 public class CompanyResource {
@@ -23,7 +36,7 @@ public class CompanyResource {
     @GET
     @Path("{company}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Company getCompanyInfo(@PathParam("company") String TKR) {
+    public Company getCompanyInfo(@PathParam("company") String TKR) throws IOException {
 
         List<Company> mycompanies = FileHelper.readCompanies("companyInfo.json");
 
@@ -31,16 +44,16 @@ public class CompanyResource {
         //String CheckedInput = InputValidator(TKR);
         String CheckedInput = TKR;
 
-        if (TKR.symbol.equals("ERROR99")) {
-            return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
+        if (CheckedInput.equals("ERROR99")) {
+            //return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
         }
 
         for (Company acompany : mycompanies) {
-            if (acompany.symbol.equals(CheckedInput)) {
+            if (acompany.getSymbol().equals(CheckedInput)) {
                 return acompany;
             }
         }
-        return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
+        //return Response.status(Response.Status.BAD_REQUEST).entity("Ticker not found").build();
     }
 }
 

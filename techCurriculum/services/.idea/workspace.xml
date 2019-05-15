@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="748f300d-ec49-4e94-9aaa-11a4cba4e05e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example2Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example2Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example3Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example3Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example4Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example4Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example5Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example5Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example6Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example6Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example7Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example7Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/server/StarterApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/server/StarterApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/starter_code/cards-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/starter_code/cards-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/starter_code/cards-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/starter_code/cards-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/starter_code/cards-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/starter_code/cards-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/GS_group7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/GS_group7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/utility/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/utility/FileHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,7 +21,7 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -45,6 +37,13 @@
         <option value="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/examples/Example7Resource.java" />
         <option value="$PROJECT_DIR$/EngineeringEssentialsServices/src/main/java/server/StarterApp.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -172,13 +171,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RunDashboard">
@@ -228,9 +228,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -246,14 +246,14 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29863015" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32771084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.3297568" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32956383" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
