@@ -17,6 +17,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import App2 from './testApp';
 import './style/index.css';
 
 ReactDOM.render(
