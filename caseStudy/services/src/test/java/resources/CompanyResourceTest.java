@@ -1,13 +1,26 @@
 
 package resources;
-import pojo.Company;
 
+import junit.framework.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
+import org.junit.Assert;
 import org.junit.Test;
+import utility.FileHelper;
+
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.*;
+
+import pojo.Company;
+import utility.InputValidator;
+
+import static org.junit.Assert.*;
 
 
 /**
@@ -32,7 +45,9 @@ import javax.ws.rs.core.Application;
  */
 public class CompanyResourceTest extends JerseyTest{
 
+
     private static ObjectMapper mapper = new ObjectMapper();
+
 
 
     @Override
@@ -42,19 +57,28 @@ public class CompanyResourceTest extends JerseyTest{
         );
     }
 
+    @Test
+    public void testCompanyResources(){
+        String expected = "ADBE";
+        Company tested = target().path("services/ADBE").request().get(Company.class);
+        System.out.println(tested.getSymbol());
+        assertEquals(expected, tested.getSymbol());
 
-
-    // TODO - write a test for each method in the CompanyResource class
-    // Think about both positive and negative test cases:
-    // What happens if no inputs are passed?
-    // What happens if the input is null?
+    }
 
     @Test
-    public void CompanyInfoTest(){
-        String example1Symbol = "ADBE";
-        String actualSymbol = target().path("services/ADBE").request().get(Company.class).getSymbol();
-        //assertEquals(actualSymbol, example1Symbol);
-        System.out.println(actualSymbol);
+    public void testInputInvalidator(){
+        InputValidator Iv = new InputValidator();
+        String expected = "ADBE";
+        String tested = Iv.validateTicker(expected);
+        assertEquals(expected, tested);
+    }
+
+    @Test
+    public void testEmpty(){
+        String expected = "MS";
+        Company tested = target().path("services/MS").request().get(Company.class);
+        assertEquals(expected, tested.getSymbol());
     }
 
 }
