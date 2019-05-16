@@ -39,7 +39,7 @@
  * https://www.npmjs.com/package/react-select
  * http://jedwatson.github.io/react-select/
  * https://github.com/JedWatson/react-select
- *
+ * 
  * react-boostrap-typeahead
  * https://www.npmjs.com/package/react-bootstrap-typeahead
  * http://ericgio.github.io/react-bootstrap-typeahead/
@@ -51,8 +51,8 @@ import LineChart from './charts/LineChart';
 
 //import {Typeahead} from 'react-bootstrap-typeahead'; // UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
 
-/* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that
- * provides auto-complete suggestions as you type. This would require adding a search handler
+/* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that 
+ * provides auto-complete suggestions as you type. This would require adding a search handler 
  * method for an onSearch prop.
  * https://github.com/ericgio/react-bootstrap-typeahead/blob/master/example/examples/AsyncExample.react.js
  */
@@ -84,7 +84,7 @@ class StockTicker extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showcompanyinfo: true, //TODO: Use this boolean to determine if the company information should be rendered
+            showcompanyinfo: false, //TODO: Use this boolean to determine if the company information should be rendered
             company : {
                 symbol: '',
                 name: '',
@@ -129,28 +129,28 @@ class StockTicker extends React.Component {
 
             fetch('http://localhost:8080/services/FB')
                 .then(response => response.json())
-                .then(data => this.setState({showcompanyinfo: true},
-                                            {company: {symbol: data.symbol,
-                                                        name: data.name,
-                                                        city: data.city,
-                                                        state: data.state,
-                                                        sector: data.sector,
-                                                        industry: data.industry
-                                                        }}));
-                //.then(parsedJSON => console.log(parsedJSON.results))
-                //.catch(error => console.log('error'));
+//                .then(data => this.setState({showcompanyinfo: true},
+//                                            {company: {symbol: data.symbol,
+//                                                        name: data.name,
+//                                                        city: data.city,
+//                                                        state: data.state,
+//                                                        sector: data.sector,
+//                                                        industry: data.industry
+//                                                        }}));
+                .then(parsedJSON => console.log(parsedJSON.results))
+                .catch(error => console.log('error'));
 
-//                      this.setState(
-//                                            {company: {symbol: event.target.value
-//                                                       //name: data.name,
-//                                                        //city: data.city,
-//                                                        //state: data.state,
-//                                                        //sector: data.sector,
-//                                                        //industry: data.industry
-//                                                        }});
+                      this.setState({showcompanyinfo: true},
+                                            {company: {symbol: event.target.value,
+                                                       //name: data.name,
+                                                        //city: data.city,
+                                                        //state: data.state,
+                                                        //sector: data.sector,
+                                                        //industry: data.industry
+                                                        }});
 
         //}
-            console.log(this.state.symbol);
+
             this.props.onChange(this.state.company.symbol);  //Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
             // ultimately  used to fetch the data for the LineChart component.
@@ -185,13 +185,11 @@ class StockTicker extends React.Component {
                        <form>
                        <label>Stock Ticker: </label>
                        <input type="text" name="stockticker" onChange={this.handleChange}/>
-                       <label>Range: </label>
-                       <input type="text" name="range" />
                        {
-                         this.state.showcompanyinfo && <p>Company Name: Facebook Inc. {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>Company Name: Activision Blizzard Inc {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>City: Menlo Park {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>City: Santa Monica {this.state.company.symbol}</p>
                        }
                        {
                          this.state.showcompanyinfo && <p>State: CA {this.state.company.symbol}</p>
@@ -200,11 +198,22 @@ class StockTicker extends React.Component {
                          this.state.showcompanyinfo && <p>Sector: Technology {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>Industry: Social Media & Networking {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>Industry: Internet Gaming {this.state.company.symbol}</p>
                        }
                        {
                          this.state.showcompanyinfo && <LineChart />
                        }
+                       <div className = "maxmin">
+                       {
+                         this.state.showcompanyinfo && <h3>Max: 264.61</h3>
+                       }
+                       {
+                         this.state.showcompanyinfo && <h3>Min: 187.26</h3>
+                       }
+                       {
+                         this.state.showcompanyinfo && <h3>Span: 77.35</h3>
+                       }
+                       </div>
                        </form>
                       </div>
                 }
