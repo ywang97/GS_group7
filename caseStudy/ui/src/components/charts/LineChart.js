@@ -20,15 +20,21 @@ import Highcharts from 'highcharts';
 class LineChart extends React.Component {
     constructor(props) {
         super(props);
-        this.highchartsOptions = {
-            title: {
-                text: 'Stock Price'
-            },
-            xAxis: {
+    }
+
+    componentDidMount() {
+/*       TODO
+            Create a highcharts line chart of your choosing (e.g. https://www.highcharts.com/demo/line-time-series for a demo).
+*/
+            Highcharts.chart('chart', {
                 title: {
-                    text: 'Date'
+                    text: 'Stock Price'
                 },
-                categories: ['2/1/2019','2/10/2019','2/13/2019','2/14/2019','2/15/2019','2/16/2019','2/17/2019'
+                xAxis: {
+                    title: {
+                        text: 'Date'
+                    },
+                    categories: ['2/1/2019','2/10/2019','2/13/2019','2/14/2019','2/15/2019','2/16/2019','2/17/2019'
                     ,'2/2/2019','2/20/2019','2/21/2019', '2/22/2019','2/23/2019','2/24/2019','2/27/2019','2/28/2019'
                     ,'2/3/2019','2/6/2019', '2/7/2019', '2/8/2019', '2/9/2019','3/1/2019', '3/10/2019', '3/13/2019', '3/14/2019'
                     ,'3/15/2019','3/16/2019','3/17/2019','3/2/2019','3/20/2019','3/21/2019','3/22/2019','3/23/2019'
@@ -37,24 +43,86 @@ class LineChart extends React.Component {
                     ,'4/17/2019','4/18/2019','4/19/2019','4/20/2019','4/21/2019','4/24/2019','4/25/2019','4/26/2019'
                     ,'4/27/2019','4/28/2019','4/3/2019','4/4/2019','4/5/2019','4/6/2019','4/7/2019','5/1/2019'
                     ,'5/2/2019','5/3/2019','5/4/2019','5/5/2019']
-            },
-            yAxis: {
-                title: {
-                    text: 'Price'
-                }
-            },
-            series: [{
+                },
+                yAxis: {
+                    title: {
+                        text: 'Price'
+                    }
+                },
+                colors: ['#800080'],
+                series: [{
                 name: 'Prices',
-                data: props.dataOne
-            }]
-        }
-    }
-
-    componentDidMount(props) {
-/*       TODO
-            Create a highcharts line chart of your choosing (e.g. https://www.highcharts.com/demo/line-time-series for a demo).
-*/
-            Highcharts.chart('chart', this.highchartsOptions);
+                data: [245.97, 237.4,
+                    237.4,
+                    220.55,
+                    220.55,
+                    205.43,
+                    192,
+                    235.07,
+                    207.68,
+                    207.68,
+                    207.68,
+                    226.71,
+                    244.82,
+                    225.34,
+                    225.34,
+                    218.15,
+                    236.29,
+                    253.35,
+                    242.83,
+                    254.15,
+                    225.34,
+                    235.84,
+                    224.29,
+                    210.08,
+                    210.08,
+                    199.43,
+                    199.43,
+                    213.77,
+                    187.99,
+                    203.95,
+                    187.26,
+                    199.5,
+                    218.32,
+                    218.32,
+                    235.45,
+                    235.45,
+                    196.94,
+                    222.98,
+                    242.38,
+                    216.7,
+                    235.57,
+                    235.57,
+                    222.94,
+                    235.08,
+                    215.31,
+                    233.41,
+                    213.72,
+                    213.72,
+                    230.46,
+                    219.9,
+                    237.9,
+                    226.41,
+                    243.61,
+                    253.94,
+                    264.28,
+                    251.53,
+                    264.61,
+                    248.97,
+                    242.38,
+                    231.23,
+                    247.33,
+                    235.08,
+                    235.08,
+                    238.49,
+                    250.39,
+                    232.79,
+                    243.86,
+                    262.78,]
+                   // data: props.data
+                   // data : [2.0, 4.9, 9.5, 14.5, 3.2, 21.5, 15.2, 8.5, 9.3, 18.3, 13.9, 9.6]
+                    }]
+        });
     }
     componentWillReceiveProps(props) {
         console.log("New data received to redraw chart.");
