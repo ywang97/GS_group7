@@ -16,8 +16,11 @@
 
 
 .date {
-  display: flex;
+  text-align: center;
   flex-direction:row;
+position: absolute;
+  top: 80px;
+  right: 1100px;
 }
 .date-input {
   margin-left: 1em;
@@ -71,4 +74,12 @@
     float: center;
     width: 100%;
     align: center;
+}
+
+.maxmin {
+  text-align: center;
+  flex-direction:row;
+  position: absolute;
+  top: 100px;
+  right: 50px;
 }
