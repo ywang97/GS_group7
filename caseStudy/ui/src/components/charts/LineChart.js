@@ -20,13 +20,7 @@ import Highcharts from 'highcharts';
 class LineChart extends React.Component {
     constructor(props) {
         super(props);
-    }
-
-    componentDidMount() {
-/*       TODO
-            Create a highcharts line chart of your choosing (e.g. https://www.highcharts.com/demo/line-time-series for a demo).
-*/
-              this.highchartsOptions = {
+        this.highchartsOptions = {
             title: {
                 text: 'Stock Price'
             },
