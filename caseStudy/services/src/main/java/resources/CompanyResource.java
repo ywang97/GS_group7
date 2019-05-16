@@ -37,39 +37,46 @@ public class CompanyResource {
     @GET
     @Path("{company}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Company getCompanyInfo(@PathParam("company") String Ticker) {
+    public Response getCompanyInfo(@PathParam("company") String Ticker) {
 
-
+        Company Output = null;
         List<Company> myCompanies = null;
         try {
             myCompanies = FileHelper.readCompanies("companyInfo.json");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(myCompanies);
         System.out.println("BREAK1");
         InputValidator Iv = new InputValidator();
         System.out.println("BREAK2");
 
         String CheckedInput = Iv.validateTicker(Ticker);
         //String CheckedInput = Ticker;
-        System.out.println(CheckedInput+"FLAG");
+        Company Morgan = new Company();
+        Morgan.setHeadquartersCity("Moon");
+        Morgan.setHeadquartersStateOrCountry("Milkyway Galaxy");
+        Morgan.setIndustry("Cookies");
+        Morgan.setName("Invalid Morgan Stanley");
+        Morgan.setSymbol("IMS");
+        Morgan.setNumberOfEmployees(-2);
 
         if (CheckedInput.equals("ERROR99")) {
-            Company Morgan = new Company();
-            Morgan.setHeadquartersCity("New York");
-            Morgan.setHeadquartersStateOrCountry("NY");
-            Morgan.setIndustry("Investment Banking");
-            Morgan.setName("Morgan Stanley");
-            Morgan.setSymbol("MS");
-            Morgan.setNumberOfEmployees(57633);
-            return Morgan;
+
+            Output = Morgan;
         }
+        System.out.println(CheckedInput+"FLAG1");
 
         for (Company aCompany : myCompanies) {
             if (aCompany.getSymbol().equals(CheckedInput)) {
-                return aCompany;
+                Output = aCompany;
+                break;
             }
         }
-        return null;
+        if (Output == null){
+            Output = Morgan;
+        }
+
+        return Response.ok().entity(Output).header("Access-Control-Allow-Origin", "*").build();
     }
 }

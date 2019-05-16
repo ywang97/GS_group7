@@ -20,7 +20,7 @@ import App from './App';
 import './style/index.css';
 
 ReactDOM.render(
-  //<App />,
-  <p>test</p>,
+  <App />,
+  //<p>test</p>,
   document.getElementById('root')
 );

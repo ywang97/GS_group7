@@ -39,7 +39,7 @@
  * https://www.npmjs.com/package/react-select
  * http://jedwatson.github.io/react-select/
  * https://github.com/JedWatson/react-select
- * 
+ *
  * react-boostrap-typeahead
  * https://www.npmjs.com/package/react-bootstrap-typeahead
  * http://ericgio.github.io/react-bootstrap-typeahead/
@@ -47,10 +47,12 @@
  */
 
 import React from 'react';
+import LineChart from './charts/LineChart';
+
 //import {Typeahead} from 'react-bootstrap-typeahead'; // UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
 
-/* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that 
- * provides auto-complete suggestions as you type. This would require adding a search handler 
+/* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that
+ * provides auto-complete suggestions as you type. This would require adding a search handler
  * method for an onSearch prop.
  * https://github.com/ericgio/react-bootstrap-typeahead/blob/master/example/examples/AsyncExample.react.js
  */
@@ -72,25 +74,17 @@ class StockTicker extends React.Component {
      * services.
      */
 
-//     fetch('path', {
-//     	method: 'get'
-//     }).then(function(response) {
-//
-//     }).catch(function(err) {
-//     	// Error
-//     });
-
-     options : [
-       'GS', 'AAPL', 'FB', 'ATVI', 'ADBE', 'AKAM', 'ALXN', 'GOOG', 'AMZN', 'AAL', 'AMGN', 'ADI', 'AMAT', 'ADSK', 'ADP',
-       'BIDU', 'BIIB', 'BMRN', 'AVGO', 'CA', 'CELG', 'CERN', 'CHTR', 'CHKP', 'CTAS', 'CSCO', 'CTXS', 'CTSH', 'CMCSA',
-       'COST', 'CSX', 'CTRP', 'XRAY', 'DISCA', 'DISCK', 'DISH', 'DLTR', 'EBAY', 'EA', 'EXPE', 'ESRX', 'FAST', 'FISV',
-       'GILD', 'HAS', 'HSIC', 'HQLX', 'IDXX', 'ILMN', 'INCY'
-     ]
+//     options : [
+//       'GS', 'AAPL', 'FB', 'ATVI', 'ADBE', 'AKAM', 'ALXN', 'GOOG', 'AMZN', 'AAL', 'AMGN', 'ADI', 'AMAT', 'ADSK', 'ADP',
+//       'BIDU', 'BIIB', 'BMRN', 'AVGO', 'CA', 'CELG', 'CERN', 'CHTR', 'CHKP', 'CTAS', 'CSCO', 'CTXS', 'CTSH', 'CMCSA',
+//       'COST', 'CSX', 'CTRP', 'XRAY', 'DISCA', 'DISCK', 'DISH', 'DLTR', 'EBAY', 'EA', 'EXPE', 'ESRX', 'FAST', 'FISV',
+//       'GILD', 'HAS', 'HSIC', 'HQLX', 'IDXX', 'ILMN', 'INCY'
+//     ]
 
     constructor(props) {
         super(props);
         this.state = {
-            showcompanyinfo: false, //TODO: Use this boolean to determine if the company information should be rendered
+            showcompanyinfo: true, //TODO: Use this boolean to determine if the company information should be rendered
             company : {
                 symbol: '',
                 name: '',
@@ -115,16 +109,6 @@ class StockTicker extends React.Component {
     //Send state to the server code
     }
 
-
-    render(){
-    return (
-        <div>
-         <input type="text" onChange={this.updateInput}></input>
-         <input type="submit" onClick={this.handleSubmit} ></input>
-        </div>
-      );
-    }
-
     handleChange(event) {
 //        if (event.length > 0) {
             /**
@@ -143,28 +127,30 @@ class StockTicker extends React.Component {
         //componentDidMount() {
             //this.setState({ isLoading: true });
 
-//            fetch(event[0])
-//                .then(response => response.json())
-//                .then(data => this.setState({showcompanyinfo: true},
-//                                            {company: {symbol: data.symbol,
-//                                                        name: data.name,
-//                                                        city: data.city,
-//                                                        state: data.state,
-//                                                        sector: data.sector,
-//                                                        industry: data.industry
-//                                                        }}));
+            fetch('http://localhost:8080/services/FB')
+                .then(response => response.json())
+                .then(data => this.setState({showcompanyinfo: true},
+                                            {company: {symbol: data.symbol,
+                                                        name: data.name,
+                                                        city: data.city,
+                                                        state: data.state,
+                                                        sector: data.sector,
+                                                        industry: data.industry
+                                                        }}));
+                //.then(parsedJSON => console.log(parsedJSON.results))
+                //.catch(error => console.log('error'));
 
-                      this.setState({showcompanyinfo: true},
-                                            {company: {symbol: event.target.value,
-                                                       //name: data.name,
-                                                        //city: data.city,
-                                                        //state: data.state,
-                                                        //sector: data.sector,
-                                                        //industry: data.industry
-                                                        }});
+//                      this.setState(
+//                                            {company: {symbol: event.target.value
+//                                                       //name: data.name,
+//                                                        //city: data.city,
+//                                                        //state: data.state,
+//                                                        //sector: data.sector,
+//                                                        //industry: data.industry
+//                                                        }});
 
         //}
-
+            console.log(this.state.symbol);
             this.props.onChange(this.state.company.symbol);  //Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
             // ultimately  used to fetch the data for the LineChart component.
@@ -181,29 +167,12 @@ class StockTicker extends React.Component {
 
         /**
          * TODO
-         * Render a typeahead component that uses the data prefetched from your service to display a list of companies or
-         * ticker symbols. The props you use can be stored as state objects.
          * On change should fetch the company information and display Company, Ticker Symbol, City, State/Country, Sector, and Industry information.
          * https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/Props.md
          */
 
         return (
             <div className="stockticker">
-                <div className="ticker-input">
-                    <div className="stockticker-typeahead">
-                        {/* useful props if you decide to use react-bootstrap-typeahead
-                        <Typeahead
-                             align=
-                             filterBy=
-                             labelKey=
-                             onChange={this.handleChange}
-                             minLength=
-                             placeholder="Company Name/Ticker"
-                             options=
-                        />
-                        */}
-                    </div>
-                </div>
                 {
                     /**
                      *  TODO
@@ -213,28 +182,30 @@ class StockTicker extends React.Component {
                      *  http://reactpatterns.com/#conditional-rendering
                      */
                       <div>
-                       <section>
                        <form>
                        <label>Stock Ticker: </label>
                        <input type="text" name="stockticker" onChange={this.handleChange}/>
+                       <label>Range: </label>
+                       <input type="text" name="range" />
                        {
-                         this.state.showcompanyinfo && <p>"Company Name: " {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>Company Name: Facebook Inc. {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>"City: " {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>City: Menlo Park {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>"State: " {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>State: CA {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>"Sector: " {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>Sector: Technology {this.state.company.symbol}</p>
                        }
                        {
-                         this.state.showcompanyinfo && <p>"Industry: " {this.state.company.symbol}</p>
+                         this.state.showcompanyinfo && <p>Industry: Social Media & Networking {this.state.company.symbol}</p>
+                       }
+                       {
+                         this.state.showcompanyinfo && <LineChart />
                        }
                        </form>
-                       </section>
-
                       </div>
                 }
             </div>
