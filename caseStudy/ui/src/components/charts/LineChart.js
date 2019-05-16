@@ -20,58 +20,61 @@ import Highcharts from 'highcharts';
 class LineChart extends React.Component {
     constructor(props) {
         super(props);
+        this.highchartsOptions = {
+            title: {
+                text: 'Stock Price'
+            },
+            xAxis: {
+                title: {
+                    text: 'Date'
+                },
+                categories: ['2/1/2019','2/10/2019','2/13/2019','2/14/2019','2/15/2019','2/16/2019','2/17/2019'
+                    ,'2/2/2019','2/20/2019','2/21/2019', '2/22/2019','2/23/2019','2/24/2019','2/27/2019','2/28/2019'
+                    ,'2/3/2019','2/6/2019', '2/7/2019', '2/8/2019', '2/9/2019','3/1/2019', '3/10/2019', '3/13/2019', '3/14/2019'
+                    ,'3/15/2019','3/16/2019','3/17/2019','3/2/2019','3/20/2019','3/21/2019','3/22/2019','3/23/2019'
+                    ,'3/24/2019','3/27/2019','3/28/2019','3/29/2019','3/3/2019','3/30/2019','3/31/2019','3/6/2019'
+                    ,'3/7/2019','3/8/2019','3/9/2019','4/10/2019','4/11/2019','4/12/2019', '4/13/2019','4/14/2019'
+                    ,'4/17/2019','4/18/2019','4/19/2019','4/20/2019','4/21/2019','4/24/2019','4/25/2019','4/26/2019'
+                    ,'4/27/2019','4/28/2019','4/3/2019','4/4/2019','4/5/2019','4/6/2019','4/7/2019','5/1/2019'
+                    ,'5/2/2019','5/3/2019','5/4/2019','5/5/2019']
+            },
+            yAxis: {
+                title: {
+                    text: 'Price'
+                }
+            },
+            series: [{
+                name: 'Prices',
+                data: props.dataOne
+            }]
+        }
     }
 
-    componentDidMount() {
+    componentDidMount(props) {
 /*       TODO
             Create a highcharts line chart of your choosing (e.g. https://www.highcharts.com/demo/line-time-series for a demo).
 */
-            Highcharts.chart('chart', {
-                title: {
-                    text: 'Stock Price'
-                },
-                xAxis: {
-                    title: {
-                        text: 'Date'
-                    },
-                    type: 'datetime'
-                },
-                yAxis: {
-                    title: {
-                        text: 'Price'
-                    }
-                },
-                series: [{
-                name: 'Prices',
-                   // data: props.data
-                   // data : [2.0, 4.9, 9.5, 14.5, 3.2, 21.5, 15.2, 8.5, 9.3, 18.3, 13.9, 9.6]
-                    }]
-        });
-
+            Highcharts.chart('chart', this.highchartsOptions);
     }
-
     componentWillReceiveProps(props) {
         console.log("New data received to redraw chart.");
-        
+
         /**
          * TODO
          * Parse the data received from props, a Javascript object, to map to a Javascript array
          * required by the type of line chart chosen and set it in the series. Use Date.UTC(..)
          * to create the x-axis.
          */
-        
+
         /**
          * TODO
          * Uncomment the line below to pass the data be displayed to the series
          * this.chart.series[0].setData(data);
          */
     }
-
     componentWillUnmount() {
         this.chart.destroy();
     }
-
-
     render() {
         return (
             <div id='chart'></div>
@@ -80,3 +83,4 @@ class LineChart extends React.Component {
 }
 
 // Don't forget to export your component!
+export default LineChart;
