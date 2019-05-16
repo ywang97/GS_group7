@@ -24,6 +24,7 @@ import './style/App.css';
  import StockTicker from './components/StockTicker';
  import Date from './components/Date';
  import Charts from './components/Charts';
+ import LineChart from './components/charts/LineChart';
 
 class App extends React.Component{
     constructor(props) {
@@ -33,13 +34,20 @@ class App extends React.Component{
              * TODO
              * Add state objects for the user inputs and anything else you may need to render the highchart.
              */
+            stockticker: '',
+            startdate: '',
+            enddate: ''
         };
 
+     this.handleChange = this.handleChange.bind(this);
     }
 
 
-
-
+    handleChange(stockticker, startdate, enddate) {
+        this.setState({stockticker: stockticker,
+                       startdate: startdate,
+                       enddate: enddate});
+    }
 
     render () {
       return (
@@ -52,7 +60,7 @@ class App extends React.Component{
                * Add onChange props to the StockTicker and both Date components.
                * These props methods should set state and help determine if the
                * highchart should be displayed by changing the state of that boolean.
-               * Don't forget to bind these methods!
+               * Don't forget to bind these methods!    
                */}
 
                 <div className="date-range">
@@ -70,7 +78,19 @@ class App extends React.Component{
                    *  http://reactpatterns.com/#conditional-rendering
                    */}
 
-          </div>
+                   <div className = "h1"> Cloud 7 Stock Price Viewer</div>
+
+                   <div id='app-body'>
+                      <form>
+                           <label>Stock Ticker: </label>
+                           <input type="text" name="stockticker" />
+
+                      </form>
+                      </div>
+                        <StockTicker handleChange={this.stockticker} />
+                        <Date handleChange={this.startdate, this.enddate} />
+                      <LineChart />
+                    </div>
       );
     }
 }
