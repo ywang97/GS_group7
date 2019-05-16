@@ -30,7 +30,7 @@ public class Stock {
     // provided data in resources/data
 
     private Date date;
-    private Company company;
+    private String name;
     private float dailyClosePrice;
 
 
@@ -41,8 +41,8 @@ public class Stock {
         return date;
     }
 
-    public Company getCompany() {
-        return company;
+    public String getName() {
+        return this.name;
     }
 
     public float getDailyClosePrice() {
@@ -55,8 +55,8 @@ public class Stock {
         this.date = formatted_date.parse(dat);
     }
 
-    public void setCompany (Company comp){
-        this.company = comp;
+    public void setName (String comp){
+        this.name = comp;
     }
 
     public void setDailyClosePrice (float price){

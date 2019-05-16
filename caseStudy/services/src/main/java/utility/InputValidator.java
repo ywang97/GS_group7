@@ -14,32 +14,39 @@
 // * under the License.
 // */
 //
-//package utility;
-//import java.util.regex;
-///**
-// * Utility class to validate inputs
-// */
-//public class InputValidator {
-//
-//    // TODO - write a method that will validate your JSON input files
-//    // ignore for now :)
-//
-//    // TODO - write a method that will validate the inputs to the Company Resource
-//    public String validateTicker(String ticker){
-//        if (ticker.length()!=4){
-//            return "ERROR99";
-//        }
-//        if (ticker == null){
-//            return "ERROR99";
-//        }
-//        if (ticker.matches("^[a-zA-Z]*$")){
-//            return ticker.toUpperCase();
-//        }
-//        return "ERROR99";
-//
-//    }
-//
-//    // TODO - write a method that will validate the inputs to the Stock Resource
-//
-//
-//}
+package utility;
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * Utility class to validate inputs
+ */
+public class InputValidator {
+
+    // TODO - write a method that will validate your JSON input files
+    // ignore for now :)
+
+    // TODO - write a method that will validate the inputs to the Company Resource
+    public String validateTicker(String ticker){
+        System.out.println(ticker);
+        if (ticker.length()!=4){
+            System.out.println("Failed");
+            return "ERROR99";
+        }
+        if (ticker == null){
+            System.out.println("Failed");
+            return "ERROR99";
+        }
+        if (StringUtils.isAlphanumeric(ticker)){
+            System.out.println("success");
+            return ticker.toUpperCase();
+
+        }
+        System.out.println("failed");
+        return "ERROR99";
+
+    }
+
+    // TODO - write a method that will validate the inputs to the Stock Resource
+
+
+}

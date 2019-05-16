@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="748f300d-ec49-4e94-9aaa-11a4cba4e05e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/GS_group7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/GS_group7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../caseStudy/services/services.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/resources/CompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/resources/CompanyResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/utility/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/src/main/java/utility/FileHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/src/test/java/resources/CompanyResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/src/test/java/resources/CompanyResourceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/stock-visualization-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/resources/CompanyResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/target/classes/resources/CompanyResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/resources/data/companyInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/resources/data/historicalStockData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/resources/data/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/utility/FileHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/target/classes/utility/FileHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/classes/utility/FileHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/target/classes/utility/FileHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/test-classes/resources/CompanyResourceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../caseStudy/services/target/test-classes/resources/CompanyResourceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../caseStudy/services/target/test-classes/test1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -171,8 +186,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="engineering-essentials" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="engineering-essentials" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -228,15 +253,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" visible="true" weight="0.3297568" />
+      <window_info id="Learn" order="6" weight="0.3297568" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -246,14 +271,14 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29863015" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29759037" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32771084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32956383" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32904148" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />

@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bbff08e-ff52-482d-aa7e-857164d60b2c" name="Default Changelist" comment="v2">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GS_group7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GS_group7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/caseStudy/services/services.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy/services/src/main/java/resources/StockResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/main/java/resources/StockResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy/services/src/main/java/server/StarterApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/main/java/server/StarterApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/src/main/java/resources/CompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/main/java/resources/CompanyResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/caseStudy/services/src/main/java/utility/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/main/java/utility/FileHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy/services/src/main/java/utility/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/main/java/utility/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/src/test/java/resources/CompanyResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/src/test/java/resources/CompanyResourceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/stock-visualization-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/stock-visualization-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/target/classes/resources/CompanyResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/target/classes/resources/CompanyResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/target/classes/utility/FileHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/target/classes/utility/FileHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/target/classes/utility/FileHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/target/classes/utility/FileHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy/services/target/test-classes/resources/CompanyResourceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy/services/target/test-classes/resources/CompanyResourceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/techCurriculum/services/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/techCurriculum/services/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/caseStudy/services/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +51,7 @@
         <option value="$PROJECT_DIR$/caseStudy/services/src/main/java/pojo/Company.java" />
         <option value="$PROJECT_DIR$/caseStudy/services/src/main/java/pojo/Stock.java" />
         <option value="$PROJECT_DIR$/caseStudy/services/src/main/java/utility/FileHelper.java" />
+        <option value="$PROJECT_DIR$/caseStudy/services/src/main/java/resources/FakeCompanyResource.java" />
       </list>
     </option>
   </component>
@@ -112,7 +121,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GS_group7" type="b2602c69:ProjectViewProjectNode" />
@@ -122,12 +131,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GS_group7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GS_group7" type="462c0819:PsiDirectoryNode" />
+              <item name="caseStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GS_group7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GS_group7" type="462c0819:PsiDirectoryNode" />
+              <item name="caseStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,12 +183,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.StarterApp" />
-        <item itemvalue="Application.StarterApp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -235,7 +257,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -252,13 +274,13 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4985694" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49427754" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50572246" side_tool="true" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50572246" side_tool="true" visible="true" weight="0.2819277" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49928468" weight="0.32771084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3298969" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.16309012" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -332,9 +354,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/main.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/main.iml" />
     <entry file="file://$PROJECT_DIR$/techCurriculum/services/EngineeringEssentialsServices/src/main/java/model/Country.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -385,27 +405,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/test/java/resources/CompanyResourceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/techCurriculum/services/EngineeringEssentialsServices/src/test/java/resources/ResourcesTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/resources/data/companyInfo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2872">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -427,13 +430,6 @@
             <element signature="e#0#1752#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/java/resources/CompanyResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -471,12 +467,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/test/java/resources/CompanyResourceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/java/resources/FakeCompanyResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/java/resources/CompanyResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caseStudy/services/src/main/resources/data/companyInfo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>11</last-edited>
+          <last-edited>1.8.0_131</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
