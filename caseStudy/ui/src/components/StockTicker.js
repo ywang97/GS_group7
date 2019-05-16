@@ -104,7 +104,25 @@ class StockTicker extends React.Component {
              * Add any additional state to pass via props to the typeahead component.
              */
         };
+
+
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(){
+    console.log('Your input value is: ' + this.state.username);
+    //Send state to the server code
+    }
+
+
+    render(){
+    return (
+        <div>
+         <input type="text" onChange={this.updateInput}></input>
+         <input type="submit" onClick={this.handleSubmit} ></input>
+        </div>
+      );
     }
 
     handleChange(event) {
@@ -125,16 +143,26 @@ class StockTicker extends React.Component {
         //componentDidMount() {
             //this.setState({ isLoading: true });
 
-            fetch(event[0])
-                .then(response => response.json())
-                .then(data => this.setState({showcompanyinfo: true},
-                                            {company: {symbol: data.symbol,
-                                                        name: data.name,
-                                                        city: data.city,
-                                                        state: data.state,
-                                                        sector: data.sector,
-                                                        industry: data.industry
-                                                        }}));
+//            fetch(event[0])
+//                .then(response => response.json())
+//                .then(data => this.setState({showcompanyinfo: true},
+//                                            {company: {symbol: data.symbol,
+//                                                        name: data.name,
+//                                                        city: data.city,
+//                                                        state: data.state,
+//                                                        sector: data.sector,
+//                                                        industry: data.industry
+//                                                        }}));
+
+                      this.setState({showcompanyinfo: true},
+                                            {company: {symbol: event.target.value,
+                                                       //name: data.name,
+                                                        //city: data.city,
+                                                        //state: data.state,
+                                                        //sector: data.sector,
+                                                        //industry: data.industry
+                                                        }});
+
         //}
 
             this.props.onChange(this.state.company.symbol);  //Call this.props.onChange with the selected symbol to propagate it
@@ -184,21 +212,30 @@ class StockTicker extends React.Component {
                      *  be maintained as a state object.
                      *  http://reactpatterns.com/#conditional-rendering
                      */
-                     <div>
-                     {
-                       this.showcompanyinfo ? ( // if showcompanyinfo is true
-                       <div>
-                         <span>{this.state.company.name}</span>
-                         <span>{this.state.company.city}</span>
-                         <span>{this.state.company.state}</span>
-                         <span>{this.state.company.sector}</span>
-                         <span>{this.state.company.industry}</span>
-                        </div>
-                       ) : (
-                       <span> </span>
-                       )
-                     }
-                     </div>
+                      <div>
+                       <section>
+                       <form>
+                       <label>Stock Ticker: </label>
+                       <input type="text" name="stockticker" onChange={this.handleChange}/>
+                       {
+                         this.state.showcompanyinfo && <p>"Company Name: " {this.state.company.symbol}</p>
+                       }
+                       {
+                         this.state.showcompanyinfo && <p>"City: " {this.state.company.symbol}</p>
+                       }
+                       {
+                         this.state.showcompanyinfo && <p>"State: " {this.state.company.symbol}</p>
+                       }
+                       {
+                         this.state.showcompanyinfo && <p>"Sector: " {this.state.company.symbol}</p>
+                       }
+                       {
+                         this.state.showcompanyinfo && <p>"Industry: " {this.state.company.symbol}</p>
+                       }
+                       </form>
+                       </section>
+
+                      </div>
                 }
             </div>
         );
