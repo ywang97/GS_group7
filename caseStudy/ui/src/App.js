@@ -51,6 +51,7 @@ class App extends React.Component{
 
     render () {
       return (
+      <div>
           <div className="page-display">
               <div className="input">
               {/**
@@ -60,7 +61,7 @@ class App extends React.Component{
                * Add onChange props to the StockTicker and both Date components.
                * These props methods should set state and help determine if the
                * highchart should be displayed by changing the state of that boolean.
-               * Don't forget to bind these methods!    
+               * Don't forget to bind these methods!
                */}
 
                 <div className="date-range">
@@ -80,17 +81,15 @@ class App extends React.Component{
 
                    <div className = "h1"> Cloud 7 Stock Price Viewer</div>
 
-                   <div id='app-body'>
-                      <form>
-                           <label>Stock Ticker: </label>
-                           <input type="text" name="stockticker" />
-
-                      </form>
-                      </div>
                         <StockTicker handleChange={this.stockticker} />
                         <Date handleChange={this.startdate, this.enddate} />
-                      <LineChart />
-                    </div>
+                      <section>
+                      <div className = "chart">
+                        <LineChart />
+                      </div>
+                      </section>
+                   </div>
+          </div>
       );
     }
 }
