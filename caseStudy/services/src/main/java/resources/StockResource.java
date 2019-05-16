@@ -14,32 +14,69 @@
 // * under the License.
 // */
 //
-//package resources;
-//
-//
-//import javax.ws.rs.GET;
-//import javax.ws.rs.Path;
-//import javax.ws.rs.PathParam;
-//import javax.ws.rs.Produces;
-//import javax.ws.rs.core.MediaType;
-//import java.io.IOException;
-//import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-//import java.util.ArrayList;
-//import java.util.Date;
-//import java.util.List;
-//
-//import static utility.FileHelper.DATEFORMAT;
-//
-//// TODO - add your @Path here
-//@Path("Case_Study/services")
-//public class StockResource {
-//    @GET
-//    @Path("{stock}")
-//    public
-//
-//    // TODO - Add a @GET resource to get stock data
-//    // Your service should return data based on 3 inputs
-//    // Stock ticker, start date and end date
-//
-//}
+package resources;
+
+
+import jdk.internal.util.xml.impl.Input;
+import pojo.Company;
+import utility.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.util.List;
+import utility.InputValidator;
+import pojo.Company;
+import pojo.Stock;
+
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
+
+@Path("services")
+public class StockResource {
+    @GET
+    @Path("{stock}/{start_date}/{end_date}")
+    @Produces(APPLICATION_JSON)
+
+    public List<String> getStockInfo(@PathParam("stock") String Ticker,
+    @PathParam("start_date") String StartDate, @PathParam("end_date") String EndDate){
+        List<Company> myCompanies = null;
+        List<Stock> myStocks = null;
+
+        Stock output = null;
+        try {
+            myStocks = FileHelper.readStocks("stockInfo.json");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        InputValidator Iv = new InputValidator();
+
+        String CheckInput = Iv.validateStock(Stock);
+        //String CheckedInput = Ticker;
+
+        if (CheckInput.equals("ERROR99")) {
+            Company Morgan = new Company();
+            Morgan.setHeadquartersCity("New York");
+            Morgan.setHeadquartersStateOrCountry("NY");
+            Morgan.setIndustry("Investment Banking");
+            Morgan.setName("Morgan Stanley");
+            Morgan.setSymbol("MS");
+            Morgan.setNumberOfEmployees(57633);
+
+        }
+
+        for (Company aCompany : myCompanies) {
+            if (aCompany.getSymbol().equals(CheckedInput)) {
+                output = aCompany;
+            }
+        }
+
+
+    }
+
+
+
+}

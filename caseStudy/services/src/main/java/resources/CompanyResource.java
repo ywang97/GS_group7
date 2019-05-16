@@ -16,6 +16,7 @@
 
 package resources;
 
+import jdk.internal.util.xml.impl.Input;
 import pojo.Company;
 import utility.*;
 import javax.ws.rs.GET;
@@ -26,6 +27,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.List;
+import utility.InputValidator;
+import pojo.Company;
 
 // TODO - add your @Path here
 @Path("services")
@@ -34,58 +37,39 @@ public class CompanyResource {
     @GET
     @Path("{company}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Company getCompanyInfo(@PathParam("company") String TKR) throws IOException {
+    public Company getCompanyInfo(@PathParam("company") String Ticker) {
 
-        List<Company> mycompanies = FileHelper.readCompanies("companyInfo.json");
 
-        //CALL INPUT VALIDATOR
-        //String CheckedInput = InputValidator(TKR);
-        String CheckedInput = TKR;
+        List<Company> myCompanies = null;
+        try {
+            myCompanies = FileHelper.readCompanies("companyInfo.json");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("BREAK1");
+        InputValidator Iv = new InputValidator();
+        System.out.println("BREAK2");
+
+        String CheckedInput = Iv.validateTicker(Ticker);
+        //String CheckedInput = Ticker;
+        System.out.println(CheckedInput+"FLAG");
 
         if (CheckedInput.equals("ERROR99")) {
-            //return Response.status(Response.Status.BAD_REQUEST).entity("Invalid input").build();
+            Company Morgan = new Company();
+            Morgan.setHeadquartersCity("New York");
+            Morgan.setHeadquartersStateOrCountry("NY");
+            Morgan.setIndustry("Investment Banking");
+            Morgan.setName("Morgan Stanley");
+            Morgan.setSymbol("MS");
+            Morgan.setNumberOfEmployees(57633);
+            return Morgan;
         }
 
-        for (Company aCompany : mycompanies) {
+        for (Company aCompany : myCompanies) {
             if (aCompany.getSymbol().equals(CheckedInput)) {
                 return aCompany;
             }
         }
-        throw new IOException("Company not found");
+        return null;
     }
 }
-
-/*
-            "symbol":"AKAM",
-            "name":"Akamai Technologies Inc.",
-            "headquartersCity":"Cambridge",
-            "headquartersStateOrCountry":"MA",
-            "numberOfEmployees":6200,
-            "sector":"Technology",
-            "industry":"IT Services & Consulting"
-*/
-
-
-
-    /*
-    @GET
-    @Path("{country}/wins")
-    public int getWins(@PathParam("country") String country) throws IOException {
-
-        List<Event> events = FileHelper.readAllEvents("events.json");
-
-        int numWins = 0;
-        for (Event event: events) {
-            if (event.getWinningCountry().name().equalsIgnoreCase(country)) {
-                ++numWins;
-            }
-
-        }
-        return numWins;
-    }
-}
-*/
-//fdsasdfasdffdasdfasd
-
-    // TODO - Add a @GET resource to get company data
-    // Your service should return data for a given stock ticker
