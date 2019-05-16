@@ -47,7 +47,7 @@
  */
 
 import React from 'react';
-import {Typeahead} from 'react-bootstrap-typeahead'; // UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
+//import {Typeahead} from 'react-bootstrap-typeahead'; // UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
 
 /* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that 
  * provides auto-complete suggestions as you type. This would require adding a search handler 
@@ -108,7 +108,7 @@ class StockTicker extends React.Component {
     }
 
     handleChange(event) {
-        if (event.length > 0) {
+//        if (event.length > 0) {
             /**
              * TODO
              * Make a request to your service to GET company information for the selected company and set it in state.
@@ -122,30 +122,30 @@ class StockTicker extends React.Component {
 
              // URL: http://localhost:8000/service_path/some_param
 
-        componentDidMount() {
+        //componentDidMount() {
             //this.setState({ isLoading: true });
 
             fetch(event[0])
                 .then(response => response.json())
-                .then(data => this.setState({company: {symbol: data.symbol,
+                .then(data => this.setState({showcompanyinfo: true},
+                                            {company: {symbol: data.symbol,
                                                         name: data.name,
                                                         city: data.city,
                                                         state: data.state,
                                                         sector: data.sector,
                                                         industry: data.industry
                                                         }}));
-        this.setState({showcompanyinfo: true});
-        }
+        //}
 
             this.props.onChange(this.state.company.symbol);  //Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
             // ultimately  used to fetch the data for the LineChart component.
 
-        }
-        else {
-            this.setState({showcompanyinfo: false});
-            this.props.onChange(undefined);
-        }
+//        }
+//        else {
+//            this.setState({showcompanyinfo: false});
+//            this.props.onChange(undefined);
+//        }
     }
 
 
@@ -162,7 +162,6 @@ class StockTicker extends React.Component {
         return (
             <div className="stockticker">
                 <div className="ticker-input">
-                    <p><strong>Stock Ticker</strong></p>
                     <div className="stockticker-typeahead">
                         {/* useful props if you decide to use react-bootstrap-typeahead
                         <Typeahead
@@ -187,15 +186,17 @@ class StockTicker extends React.Component {
                      */
                      <div>
                      {
-                       showcompanyinfo ? ( // if showcompanyinfo is true
-                         <span>{props.company.name}</span>
-                         <span>{props.company.city}</span>
-                         <span>{props.company.state}</span>
-                         <span>{props.company.sector}</span>
-                         <span>{props.company.industry}</span>
+                       this.showcompanyinfo ? ( // if showcompanyinfo is true
+                       <div>
+                         <span>{this.state.company.name}</span>
+                         <span>{this.state.company.city}</span>
+                         <span>{this.state.company.state}</span>
+                         <span>{this.state.company.sector}</span>
+                         <span>{this.state.company.industry}</span>
+                        </div>
                        ) : (
-                         <span>Rendered when otherwise</span>
-                       );
+                       <span> </span>
+                       )
                      }
                      </div>
                 }
@@ -207,11 +208,3 @@ class StockTicker extends React.Component {
 
 //Don't forget to export your component!
 export default StockTicker;
-
-//var data = require('../../file.json'); // forward slashes will depend on the file location
-
-//for(var i = 0; i < data.length; i++) {
-//    var obj = data[i];
-//
-//    console.log("Name: " + obj.first_name + ", " + obj.last_name);
-//}
